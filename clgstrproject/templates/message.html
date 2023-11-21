@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation Message</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <div>
+            <h2>Form Submission Successful</h2>
+        </div>
+        <div>
+            <p>Thank you for submitting the form. Your data has been successfully recorded.</p>
+        </div>
+        <div>
+            <a href="{% url 'store:home' %}" class="btn btn-warning">Return to Home </a>
+        </div>
+    </div>
+</body>
+</html>

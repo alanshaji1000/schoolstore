@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+This is the Login Page
+{% endblock %}
+
+{% block title %}
+   Online School Store PVT LTD
+{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Login</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="{% url 'store:login' %}" method="post">
+                            {% csrf_token %}
+                            <br>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Enter your Username" required>
+                            </div> <br>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter your Password" required>
+                            </div>
+                            <br>
+                            <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-block">Login</button> &nbsp;
+                            <a href="{% url 'store:register' %}" class="btn btn-warning">Register</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

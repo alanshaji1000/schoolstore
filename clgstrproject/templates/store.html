@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+This is the after Store Page
+{% endblock %}
+
+{% block title %}
+   Online School Store PVT LTD
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <br>
+        <h2>Welcome to the Store Page!</h2>
+        <p>Click the button below to fill the Form.</p>
+        <a href="{% url 'store:form' %}" class="btn btn-primary">Go to Form</a>
+    </div>
+<br>
+<div>
+  <img class="my_image my_image_padding" src="{% static 'img/banner.png' %}"  alt="our products">  <!-- height="500px;" width="1350px;" -->
+</div>
+<br>
+{% endblock %}
+

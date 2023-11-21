@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+    This is the Form Page
+{% endblock %}
+
+{% block title %}
+   Online School Store PVT LTD - Form
+{% endblock %}
+
+{% block content %}
+
+<div class="form-row align-items-center">
+    <div class="col-auto offset-md-2">
+    <h1>Form Submission</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div>
+        <div class="form-group">
+            <label for="id_name">Name:</label><br>
+            {{ form.name }}
+        </div>
+        <div class="form-group">
+            <label for="id_dob">Date of Birth:</label><br>
+            {{ form.dob }}
+        </div>
+        <div class="form-group">
+            <label for="id_age">Age:</label><br>
+            {{ form.age }}
+        </div>
+        <div class="form-group">
+            <label for="id_gender">Gender:</label><br>
+            {{ form.gender }}
+        </div>
+        <div class="form-group">
+            <label for="id_phone_number">Phone Number:</label><br>
+            {{ form.phone_number }}
+        </div>
+        <div class="form-group">
+            <label for="id_mail_id">Email:</label><br>
+            {{ form.mail_id }}
+        </div>
+        <div class="form-group">
+            <label for="id_address">Address:</label><br>
+            {{ form.address }}
+        </div>
+        <div class="form-group">
+            <label for="id_department">Department:</label><br>
+            {{ form.department }}
+        </div>
+        <div class="form-group">
+            <label for="id_course">Course:</label><br>
+            {{ form.course }}
+        </div>
+        <div class="form-group">
+            <label for="id_purpose">Purpose:</label><br>
+            {{ form.purpose }}
+        </div>
+        <div class="form-group">
+            <label for="id_materials_provided">Materials Provided:</label><br>
+            {{ form.materials_provided }}
+        </div>
+        <div>
+        <input type="submit" class="btn btn-success" value="Submit"> &nbsp;
+        <a class="btn btn-danger" href="{% url 'store:logout' %}">Logout</a>
+        </div>
+    </div>
+    </form>
+<!--    <div>-->
+<!--    {% if messages %}-->
+<!--    <ul class="messages">-->
+<!--        {% for message in messages %}-->
+<!--            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>-->
+<!--                <h1>{{ message }}</h1>-->
+<!--                <br>-->
+<!--                <a href="{% url 'store:home' %}">Click to go Home</a>-->
+<!--            </li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+<!--    {% endif %}-->
+<!--    </div>-->
+</div>
+</div>
+
+{% endblock %}
